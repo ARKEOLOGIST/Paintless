@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-function WindowSize() {
-  
+function useWindowSize(cb) {
   const [[windowWidth, windowHeight], setWindowSize] = useState([window.innerWidth, window.innerHeight]);
-  const [visible, setVisible] = useState(false);
-    useEffect(() => {
-        let timeoutId;
-        const handleResize = () => {
-            setWindowSize([window.innerWidth, window.innerHeight]);
-            setVisible(true);
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => setVisible(false), 500);
-        }
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  return (
-    <div className={`window-size ${visible ? '' : 'hidden'}`}>
-      {windowWidth} x {windowHeight}
-    </div>
-  )
+  
+  useEffect(() => {
+    const handleResize = () => {
+      cb();
+      setWindowSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [])
+  return [windowWidth, windowHeight];
 }
 
-export default WindowSize;
+export default useWindowSize;
