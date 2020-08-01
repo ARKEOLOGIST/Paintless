@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import Name from './Name'
-import Canvas from './Canvas'
-import ColorPicker from './ColorPicker'
-import randomColor from 'randomcolor'
+import React, { useState, useEffect } from 'react';
+import Name from './Name';
+import Canvas from './Canvas';
+import ColorPicker from './ColorPicker';
+import randomColor from 'randomcolor';
 
 function Paint() {
   const [colors, setColors] = useState([]);
