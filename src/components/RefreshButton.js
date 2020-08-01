@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-React.memo(RefreshButton = ({ cb }) => {
+export default React.memo(({ cb }) => {
   return <button className="button-refresh-colors" onClick={cb}>&#8634;</button>
 })
-
-export default RefreshButton;

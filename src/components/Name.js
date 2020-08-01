@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-React.memo(Name = () => {
+export default React.memo(() => {
   const [name, setName] = useState('');
   return (
     <label className="header-name">
@@ -12,6 +12,4 @@ React.memo(Name = () => {
       />
     </label>
   )
-})
-
-export default Name;
+});
