@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import randomColor from 'randomcolor'
 
-export default function Playground() {
+function Playground() {
   const [count, setCount] = useState(0);
   
   const [color, setColor] = useState(null);
@@ -18,3 +18,5 @@ export default function Playground() {
     </div>
   )
 }
+
+export default Playground;

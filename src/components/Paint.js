@@ -4,7 +4,7 @@ import Canvas from './Canvas'
 import ColorPicker from './ColorPicker'
 import randomColor from 'randomcolor'
 
-export default function Paint() {
+function Paint() {
   const [colors, setColors] = useState([])
   const [activeColor, setActiveColor] = useState(null)
   const getColors = () => {
@@ -41,3 +41,5 @@ export default function Paint() {
     </div>
   )
 }
+
+export default Paint;
