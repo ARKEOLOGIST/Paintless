@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-function Name() {
-  const [name, setName] = useState('');
+React.memo(Name = () => {
+  console.log('rendered')
+  const [name, setName] = useState('')
   return (
     <label className="header-name">
       <input
@@ -12,6 +13,6 @@ function Name() {
       />
     </label>
   )
-}
+})
 
 export default Name;
