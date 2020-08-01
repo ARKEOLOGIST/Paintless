@@ -16,7 +16,7 @@ export default function Paint() {
     .then(res => {
       setColors(res.colors.map(color => color.hex.value));
       setActiveColor(res.colors[0].hex.value);
-    })
+    });
   }, [])
   useEffect(getColors, []);
   

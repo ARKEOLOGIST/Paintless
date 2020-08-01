@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 
 React.memo(Name = () => {
-  console.log('rendered')
-  const [name, setName] = useState('')
+  const [name, setName] = useState('');
   return (
     <label className="header-name">
       <input
