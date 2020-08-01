@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import randomColor from 'randomcolor';
 
 function ColorPicker({ colors = [], activeColor, setActiveColor }) {
-  if (!colors.length) return null
+  if (!colors.length) return null;
   return (
     <fieldset className="color-picker">
       {colors.map((color, i) => (

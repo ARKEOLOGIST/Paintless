@@ -5,16 +5,16 @@ import ColorPicker from './ColorPicker'
 import randomColor from 'randomcolor'
 
 function Paint() {
-  const [colors, setColors] = useState([])
-  const [activeColor, setActiveColor] = useState(null)
+  const [colors, setColors] = useState([]);
+  const [activeColor, setActiveColor] = useState(null);
   const getColors = () => {
     const baseColor = randomColor().slice(1);
     fetch(`https://www.thecolorapi.com/scheme?hex=${baseColor}&mode=monochrome`)
     .then(res => res.json())
     .then(res => {
-      setColors(res.colors.map(color => color.hex.value))
-      setActiveColor(res.colors[0].hex.value)
-    })
+      setColors(res.colors.map(color => color.hex.value));
+      setActiveColor(res.colors[0].hex.value);
+    });
   }
   useEffect(getColors, [])
   
